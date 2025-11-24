@@ -1,0 +1,15 @@
+[default.general]
+chip = "STM32F105RCTx"
+
+[default.probe]
+protocol = "Swd"
+
+[default.flashing]
+enabled = true
+
+[default.reset]
+halt_afterwards = true
+enabled = true
+
+[default.rtt]
+enabled = true

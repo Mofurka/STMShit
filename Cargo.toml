@@ -1,0 +1,39 @@
+[package]
+name = "stm32f105-blinky"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+cortex-m = { version = "0.7", features = ["critical-section-single-core"] }
+cortex-m-rt = "0.7"
+panic-halt = "0.2"
+
+# HAL для STM32F1
+stm32f1xx-hal = { version = "0.10", features = ["stm32f105", "rt"] }
+
+# bxCAN для работы с CAN шиной
+bxcan = "0.7"
+
+# RTT для отладочного вывода
+rtt-target = "0.5"
+
+# Critical section для одноядерных систем
+critical-section = "1.1"
+
+[profile.release]
+codegen-units = 1
+debug = true
+lto = true
+opt-level = "s"
+panic = "abort"
+
+
+[package.metadata.cortex-m-rt]
+memory-x = "memory.x"
+
+
+[[bin]]
+name = "main"
+path = "src/main.rs"
+test = false
+bench = false
