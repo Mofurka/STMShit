@@ -1,5 +1,5 @@
 [default.general]
-chip = "STM32F105RCTx"
+chip = "STM32F407VETx"  # или STM32F407ZGTx в зависимости от вашей платы
 
 [default.probe]
 protocol = "Swd"

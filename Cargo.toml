@@ -4,21 +4,19 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-cortex-m = { version = "0.7", features = ["critical-section-single-core"] }
+embedded-hal = "1.0"
+nb = "1"
+cortex-m = "0.7"
 cortex-m-rt = "0.7"
-panic-halt = "0.2"
-
-# HAL для STM32F1
-stm32f1xx-hal = { version = "0.10", features = ["stm32f105", "rt"] }
-
-# bxCAN для работы с CAN шиной
-bxcan = "0.7"
-
+# Panic behaviour, see https://crates.io/keywords/panic-impl for alternatives
+panic-halt = "1.0"
 # RTT для отладочного вывода
 rtt-target = "0.5"
 
-# Critical section для одноядерных систем
-critical-section = "1.1"
+[dependencies.stm32f4xx-hal]
+version = "0.21"
+features = ["stm32f407"] # replace the model of your microcontroller here
+# and add other required features
 
 [profile.release]
 codegen-units = 1

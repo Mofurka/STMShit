@@ -1,9 +1,12 @@
-[build]
-target = "thumbv7m-none-eabi"
-
-[target.thumbv7m-none-eabi]
-runner = "probe-rs run --chip STM32F105RCTx"
+[target.thumbv7em-none-eabihf]
+runner = "probe-rs run --chip STM32F407VETx"
 rustflags = [
   "-C", "link-arg=-Tlink.x",
 ]
-test = { }
+
+[build]
+target = "thumbv7em-none-eabihf"
+
+[env]
+DEFMT_LOG = "info"
+
