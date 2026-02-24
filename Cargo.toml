@@ -12,10 +12,11 @@ cortex-m-rt = "0.7"
 panic-halt = "1.0"
 # RTT для отладочного вывода
 rtt-target = "0.5"
+bxcan = "0.8"
 
 [dependencies.stm32f4xx-hal]
-version = "0.21"
-features = ["stm32f407"] # replace the model of your microcontroller here
+version = "0.23.0"
+features = ["stm32f407", "can"] # replace the model of your microcontroller here
 # and add other required features
 
 [profile.release]
